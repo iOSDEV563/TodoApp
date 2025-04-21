@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Todoリスト-->
+        <!--Todo List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TodoListViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,12 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oDF-tf-ZMy">
-                                <rect key="frame" x="10" y="113" width="373" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sgQ-Jr-XFV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sgQ-Jr-XFV">
                                 <rect key="frame" x="0.0" y="525" width="393" height="293"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -43,26 +38,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="sgQ-Jr-XFV" firstAttribute="top" secondItem="oDF-tf-ZMy" secondAttribute="bottom" constant="10" id="0kO-PM-8N4"/>
-                            <constraint firstItem="oDF-tf-ZMy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="3MZ-OP-66F"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sgQ-Jr-XFV" secondAttribute="trailing" id="OK1-tJ-sRn"/>
                             <constraint firstItem="sgQ-Jr-XFV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="P0t-OF-s7y"/>
-                            <constraint firstItem="oDF-tf-ZMy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="crn-3v-Jbg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sgQ-Jr-XFV" secondAttribute="bottom" id="oiC-Ig-7DD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oDF-tf-ZMy" secondAttribute="trailing" constant="10" id="qdC-fi-5In"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Todoリスト" id="r6Z-aR-g5a">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7Rv-l1-XRC">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="addTodoItem:" destination="BYZ-38-t0r" id="2Vp-wl-Ugo"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="r6Z-aR-g5a"/>
                     <connections>
                         <outlet property="tableView" destination="sgQ-Jr-XFV" id="jdP-xX-p3y"/>
-                        <outlet property="textField" destination="oDF-tf-ZMy" id="40d-zx-vxC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -77,10 +60,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DEd-Pl-2Mh">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="systemBlueColor"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -95,9 +74,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
