@@ -7,8 +7,9 @@
 
 import UIKit
 
+//ここから新規
 
-
+//ここからは元のコード
 struct TodoItem: Codable {
     var title: String
     var completed: Bool
