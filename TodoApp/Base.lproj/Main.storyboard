@@ -279,6 +279,9 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="r6Z-aR-g5a"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="subViewButton" destination="Lvj-K9-eNg" id="sQA-qp-Kyt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
