@@ -14,7 +14,10 @@ class SubViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+    @IBAction func closeButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
 
     /*
     // MARK: - Navigation
