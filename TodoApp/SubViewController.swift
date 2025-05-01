@@ -8,16 +8,25 @@
 import UIKit
 
 class SubViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    
     @IBAction func closeButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-
+    
+    @IBOutlet weak var CategoryBoxView: UIView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        CategoryBoxView.layer.borderColor = UIColor.black.cgColor
+        CategoryBoxView.layer.borderWidth = 1
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    
+    
+    
 
     /*
     // MARK: - Navigation
