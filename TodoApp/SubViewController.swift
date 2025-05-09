@@ -18,7 +18,7 @@ class SubViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        CategoryBoxView.layer.borderColor = UIColor.black.cgColor
+      CategoryBoxView.layer.borderColor = UIColor.black.cgColor
         CategoryBoxView.layer.borderWidth = 1
         
         // Do any additional setup after loading the view.
