@@ -7,10 +7,40 @@
 
 import UIKit
 
-class SubViewController: UIViewController {
+class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    @IBOutlet weak var categoryButton: UIButton!
+    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    
+    let categories = ["緊急＆重要", "緊急", "不要", "重要"]
+    
     
     @IBAction func closeButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func categoryButtonTapped(_ sender: UIButton) {
+        pickerView.isHidden = !pickerView.isHidden
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categories.count
+    }
+    
+    // MARK: - UIPickerViewDelegate
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return categories[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        categoryLabel.text = categories[row]
+        categoryLabel.textColor = .black
+        pickerView.isHidden = true  // 選択後は非表示にする
     }
     
     @IBOutlet weak var CategoryBoxView: UIView!
@@ -18,8 +48,14 @@ class SubViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        pickerView.isHidden = true
+        
       CategoryBoxView.layer.borderColor = UIColor.black.cgColor
         CategoryBoxView.layer.borderWidth = 1
+        
+        categoryLabel.textColor = .gray
         
         // Do any additional setup after loading the view.
     }
