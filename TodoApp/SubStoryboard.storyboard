@@ -20,6 +20,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wHo-US-vwk" userLabel="PickerContainerView">
                                 <rect key="frame" x="0.0" y="34" width="393" height="784"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhY-1I-Scc" userLabel="閉じる">
+                                        <rect key="frame" x="299.33333333333331" y="527.33333333333337" width="88.666666666666686" height="41.666666666666629"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="閉じる">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="23"/>
+                                        </buttonConfiguration>
+                                    </button>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ih1-tB-adO">
                                         <rect key="frame" x="0.0" y="568" width="393" height="216"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
@@ -27,6 +34,8 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="AhY-1I-Scc" secondAttribute="bottom" constant="215" id="msT-gg-0tq"/>
+                                    <constraint firstAttribute="trailing" secondItem="AhY-1I-Scc" secondAttribute="trailing" constant="5" id="nJv-Ta-egQ"/>
                                     <constraint firstAttribute="trailing" secondItem="Ih1-tB-adO" secondAttribute="trailing" id="y6S-XI-g6P"/>
                                     <constraint firstAttribute="bottom" secondItem="Ih1-tB-adO" secondAttribute="bottom" id="yMz-bh-Ggc"/>
                                     <constraint firstItem="Ih1-tB-adO" firstAttribute="leading" secondItem="wHo-US-vwk" secondAttribute="leading" id="zlk-Kq-MNL"/>
@@ -121,6 +130,7 @@
                     </view>
                     <connections>
                         <outlet property="CategoryBoxView" destination="dob-YG-56R" id="fn5-lQ-IFJ"/>
+                        <outlet property="ClosePickerViewButton" destination="AhY-1I-Scc" id="hCw-M3-v0s"/>
                         <outlet property="categoryButton" destination="3Nl-n9-4D2" id="MRB-C7-wGB"/>
                         <outlet property="categoryLabel" destination="PIB-QK-3kn" id="erq-7y-fVZ"/>
                         <outlet property="pickerView" destination="Ih1-tB-adO" id="5HY-mG-mL1"/>
@@ -128,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1770" y="-56"/>
+            <point key="canvasLocation" x="-1491" y="-56"/>
         </scene>
     </scenes>
     <resources>
