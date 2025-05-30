@@ -72,7 +72,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mc4-8h-u9n">
                                 <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                                 <items>
-                                    <navigationItem id="PQM-tX-3Y3">
+                                    <navigationItem title="新規タスク" id="PQM-tX-3Y3">
                                         <barButtonItem key="leftBarButtonItem" title="閉じる" id="AI9-yB-X37">
                                             <connections>
                                                 <action selector="closeSubViewButton:" destination="Y6W-OH-hqX" id="CxI-8T-BV3"/>
