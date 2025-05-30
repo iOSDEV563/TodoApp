@@ -17,57 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wHo-US-vwk" userLabel="PickerContainerView">
-                                <rect key="frame" x="0.0" y="34" width="393" height="784"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhY-1I-Scc" userLabel="閉じる">
-                                        <rect key="frame" x="299.33333333333331" y="527.33333333333337" width="88.666666666666686" height="41.666666666666629"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="閉じる">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="23"/>
-                                        </buttonConfiguration>
-                                    </button>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ih1-tB-adO">
-                                        <rect key="frame" x="0.0" y="568" width="393" height="216"/>
-                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
-                                    </pickerView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="AhY-1I-Scc" secondAttribute="bottom" constant="215" id="msT-gg-0tq"/>
-                                    <constraint firstAttribute="trailing" secondItem="AhY-1I-Scc" secondAttribute="trailing" constant="5" id="nJv-Ta-egQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ih1-tB-adO" secondAttribute="trailing" id="y6S-XI-g6P"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ih1-tB-adO" secondAttribute="bottom" id="yMz-bh-Ggc"/>
-                                    <constraint firstItem="Ih1-tB-adO" firstAttribute="leading" secondItem="wHo-US-vwk" secondAttribute="leading" id="zlk-Kq-MNL"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJV-Jp-6V1">
-                                <rect key="frame" x="0.0" y="10" width="100" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="4xD-zj-A74"/>
-                                    <constraint firstAttribute="width" constant="100" id="KPq-fb-hwD"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="閉じる">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="closeButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dPD-Ou-AwG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bo4-gc-lGx">
-                                <rect key="frame" x="293" y="10" width="100" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="875-KY-L15"/>
-                                    <constraint firstAttribute="height" constant="35" id="Tmu-FY-97D"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="追加">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
-                                </buttonConfiguration>
-                            </button>
                             <view contentMode="scaleToFill" id="dob-YG-56R" userLabel="CategoryView">
-                                <rect key="frame" x="7" y="112" width="380" height="80"/>
+                                <rect key="frame" x="7" y="231" width="380" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Nl-n9-4D2">
@@ -114,23 +65,39 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ih1-tB-adO">
+                                <rect key="frame" x="0.0" y="553" width="393" height="216"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                            </pickerView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mc4-8h-u9n">
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <items>
+                                    <navigationItem id="PQM-tX-3Y3">
+                                        <barButtonItem key="leftBarButtonItem" title="閉じる" id="AI9-yB-X37">
+                                            <connections>
+                                                <action selector="closeSubViewButton:" destination="Y6W-OH-hqX" id="CxI-8T-BV3"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="追加" id="05A-eL-q6V"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Bo4-gc-lGx" secondAttribute="trailing" id="ATO-op-L1Y"/>
-                            <constraint firstItem="nJV-Jp-6V1" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="CUL-yp-5qF"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="wHo-US-vwk" secondAttribute="bottom" id="EGU-0A-SdD"/>
-                            <constraint firstItem="Bo4-gc-lGx" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="10" id="PAG-Yv-IPf"/>
-                            <constraint firstItem="nJV-Jp-6V1" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="10" id="UNi-Tx-C9N"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wHo-US-vwk" secondAttribute="trailing" id="cut-dF-YLm"/>
-                            <constraint firstItem="wHo-US-vwk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="eNg-OP-9jb"/>
-                            <constraint firstItem="wHo-US-vwk" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="lSf-vO-U01"/>
+                            <constraint firstItem="Ih1-tB-adO" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="1rZ-xM-XtK"/>
+                            <constraint firstItem="Mc4-8h-u9n" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="36e-Mf-FdP"/>
+                            <constraint firstItem="Mc4-8h-u9n" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="8f7-FF-L0I"/>
+                            <constraint firstAttribute="trailing" secondItem="Mc4-8h-u9n" secondAttribute="trailing" id="FM7-fB-Pa7"/>
+                            <constraint firstItem="Ih1-tB-adO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="YKq-QQ-nkf"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Ih1-tB-adO" secondAttribute="bottom" id="y8u-dL-Kpq"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="CategoryBoxView" destination="dob-YG-56R" id="fn5-lQ-IFJ"/>
-                        <outlet property="ClosePickerViewButton" destination="AhY-1I-Scc" id="hCw-M3-v0s"/>
                         <outlet property="categoryButton" destination="3Nl-n9-4D2" id="MRB-C7-wGB"/>
                         <outlet property="categoryLabel" destination="PIB-QK-3kn" id="erq-7y-fVZ"/>
                         <outlet property="pickerView" destination="Ih1-tB-adO" id="5HY-mG-mL1"/>
@@ -138,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1491" y="-56"/>
+            <point key="canvasLocation" x="-565.64885496183206" y="-56.338028169014088"/>
         </scene>
     </scenes>
     <resources>

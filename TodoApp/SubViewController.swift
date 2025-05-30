@@ -12,17 +12,15 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var ClosePickerViewButton: UIButton!
     let categories = ["緊急＆重要", "緊急", "不要", "重要"]
     
     
-    @IBAction func closeButtonTapped(_ sender: UIButton) {
+    @IBAction func closeSubViewButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func categoryButtonTapped(_ sender: UIButton) {
         pickerView.isHidden = !pickerView.isHidden
-        ClosePickerViewButton.isHidden = !ClosePickerViewButton.isHidden
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -42,7 +40,6 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         categoryLabel.text = categories[row]
         categoryLabel.textColor = .black
         pickerView.isHidden = true
-        ClosePickerViewButton.isHidden = true
     }
     
     @IBOutlet weak var CategoryBoxView: UIView!
@@ -53,7 +50,6 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         pickerView.dataSource = self
         pickerView.delegate = self
         pickerView.isHidden = true
-        ClosePickerViewButton.isHidden = true
         
       CategoryBoxView.layer.borderColor = UIColor.black.cgColor
         CategoryBoxView.layer.borderWidth = 1
