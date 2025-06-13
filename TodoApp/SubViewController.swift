@@ -35,6 +35,12 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         categoryLabel.textColor = .black
     }
     
+    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
+        pickerView.isHidden = true
+        toolBar.isHidden = true
+    }
+    
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

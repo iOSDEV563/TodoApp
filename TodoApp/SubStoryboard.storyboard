@@ -85,7 +85,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCv-iN-SKL">
                                 <rect key="frame" x="0.0" y="509" width="393" height="44"/>
                                 <items>
-                                    <barButtonItem title="cancel" id="SI9-mR-7ob"/>
+                                    <barButtonItem title="cancel" id="SI9-mR-7ob">
+                                        <connections>
+                                            <action selector="cancelButtonTapped:" destination="Y6W-OH-hqX" id="56R-yr-0lx"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="252" style="plain" systemItem="fixedSpace" id="04q-9t-Q2M"/>
                                     <barButtonItem title="done" width="454.66666666666663" id="NSz-9q-WuW">
                                         <connections>
