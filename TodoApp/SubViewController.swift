@@ -11,12 +11,13 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var categoryTextField: UITextField!
+    
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var titleTextField: UITextField!
     
         
-    let categories = ["　緊急＆重要", "　緊急", "　不要", "　重要"]
+    let categories = ["緊急＆重要", "緊急", "不要", "重要"]
     
     
     @IBAction func closeSubViewButton(_ sender: UIButton) {
@@ -31,10 +32,10 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem){
         let selectedRow = pickerView.selectedRow(inComponent: 0)
         let selectedCategory = categories[selectedRow]
-        categoryLabel.text = selectedCategory
+        categoryTextField.text = selectedCategory
         pickerView.isHidden = true
         toolBar.isHidden = true
-        categoryLabel.textColor = .black
+        categoryTextField.textColor = .black
     }
     
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
@@ -71,14 +72,14 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         
         toolBar.isHidden = true
         
-        categoryLabel.layer.borderColor = UIColor.black.cgColor
-        categoryLabel.layer.borderWidth = 1
+        categoryTextField.layer.borderColor = UIColor.black.cgColor
+        categoryTextField.layer.borderWidth = 1
         
         titleTextField.layer.borderColor = UIColor.black.cgColor
         titleTextField.layer.borderWidth = 1
         
         
-        categoryLabel.textColor = .gray
+        categoryTextField.textColor = .gray
         
         // Do any additional setup after loading the view.
     }

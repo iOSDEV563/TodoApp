@@ -16,16 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　カテゴリ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIB-QK-3kn">
-                                <rect key="frame" x="10" y="153" width="380" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="8A7-mj-0V8"/>
-                                    <constraint firstAttribute="width" constant="380" id="zGD-Qa-RBy"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" systemColor="systemGray2Color"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Nl-n9-4D2">
                                 <rect key="frame" x="335.33333333333331" y="163" width="47.666666666666686" height="50"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,7 +65,15 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="PX1-aP-oYt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="24"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="カテゴリ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ASR-OY-UqK">
+                                <rect key="frame" x="10" y="153" width="315.33333333333331" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="2yg-iC-xnT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
@@ -85,26 +83,27 @@
                             <constraint firstItem="Ih1-tB-adO" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="1rZ-xM-XtK"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1Ob-B3-XvX" secondAttribute="trailing" constant="10" id="2gT-xv-8WB"/>
                             <constraint firstItem="Mc4-8h-u9n" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="36e-Mf-FdP"/>
+                            <constraint firstItem="1Ob-B3-XvX" firstAttribute="top" secondItem="ASR-OY-UqK" secondAttribute="bottom" constant="38" id="4gc-cO-fB5"/>
                             <constraint firstItem="1Ob-B3-XvX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="7pt-Xr-7uw"/>
                             <constraint firstItem="Mc4-8h-u9n" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="8f7-FF-L0I"/>
+                            <constraint firstItem="ASR-OY-UqK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="EBH-R4-gc7"/>
+                            <constraint firstItem="3Nl-n9-4D2" firstAttribute="leading" secondItem="ASR-OY-UqK" secondAttribute="trailing" constant="10" id="Erj-Ka-qYP"/>
                             <constraint firstAttribute="trailing" secondItem="Mc4-8h-u9n" secondAttribute="trailing" id="FM7-fB-Pa7"/>
-                            <constraint firstItem="1Ob-B3-XvX" firstAttribute="top" secondItem="PIB-QK-3kn" secondAttribute="bottom" constant="38" id="TCY-rX-E2b"/>
                             <constraint firstItem="Ih1-tB-adO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="YKq-QQ-nkf"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3Nl-n9-4D2" secondAttribute="trailing" constant="10" id="fRL-W5-Xf6"/>
                             <constraint firstItem="3Nl-n9-4D2" firstAttribute="top" secondItem="Mc4-8h-u9n" secondAttribute="bottom" constant="60" id="gc2-XX-B9c"/>
                             <constraint firstAttribute="trailing" secondItem="ZCv-iN-SKL" secondAttribute="trailing" id="hDd-63-T8f"/>
-                            <constraint firstItem="PIB-QK-3kn" firstAttribute="top" secondItem="Mc4-8h-u9n" secondAttribute="bottom" constant="50" id="oXq-zY-5pY"/>
                             <constraint firstItem="Ih1-tB-adO" firstAttribute="top" secondItem="ZCv-iN-SKL" secondAttribute="bottom" id="r9K-bj-yaQ"/>
                             <constraint firstItem="Ih1-tB-adO" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="rof-El-gIH"/>
                             <constraint firstItem="ZCv-iN-SKL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="sTX-nq-mUw"/>
-                            <constraint firstItem="PIB-QK-3kn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="x8X-Kx-W2m"/>
+                            <constraint firstItem="ASR-OY-UqK" firstAttribute="top" secondItem="Mc4-8h-u9n" secondAttribute="bottom" constant="50" id="wS5-ae-lxu"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="categoryButton" destination="3Nl-n9-4D2" id="Qpu-Tw-kGh"/>
-                        <outlet property="categoryLabel" destination="PIB-QK-3kn" id="ltv-Sv-QEY"/>
+                        <outlet property="categoryTextField" destination="ASR-OY-UqK" id="Lfb-rB-8gQ"/>
                         <outlet property="pickerView" destination="Ih1-tB-adO" id="5HY-mG-mL1"/>
                         <outlet property="titleTextField" destination="1Ob-B3-XvX" id="nUF-Uc-EBY"/>
                         <outlet property="toolBar" destination="ZCv-iN-SKL" id="054-AV-3Kh"/>
@@ -112,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1717" y="-126"/>
+            <point key="canvasLocation" x="-2094" y="-115"/>
         </scene>
     </scenes>
     <resources>
