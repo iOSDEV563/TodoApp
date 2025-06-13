@@ -12,9 +12,10 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var categoryTextField: UITextField!
-    
+    @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var addButton: UIButton!
     
         
     let categories = ["緊急＆重要", "緊急", "不要", "重要"]
@@ -22,6 +23,9 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     
     @IBAction func closeSubViewButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func addButtonTapped(_ sender: UIButton) {
     }
     
     @IBAction func categoryButtonTapped(_ sender: UIButton) {
@@ -78,13 +82,14 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         titleTextField.layer.borderColor = UIColor.black.cgColor
         titleTextField.layer.borderWidth = 1
         
+        messageTextField.layer.borderColor = UIColor.black.cgColor
+        messageTextField.layer.borderWidth = 1
+        
         
         categoryTextField.textColor = .gray
-        
+
         // Do any additional setup after loading the view.
     }
-    
-    
     
 
     /*

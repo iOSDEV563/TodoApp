@@ -27,11 +27,16 @@
                                     <action selector="categoryButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="64G-2f-STE"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ih1-tB-adO">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メッセージ" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5uv-mf-jOF">
+                                <rect key="frame" x="10" y="373" width="373" height="396"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Ih1-tB-adO">
                                 <rect key="frame" x="0.0" y="553" width="393" height="216"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                             </pickerView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mc4-8h-u9n">
+                            <navigationBar contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Mc4-8h-u9n">
                                 <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                                 <items>
                                     <navigationItem title="新規タスク" id="PQM-tX-3Y3">
@@ -40,7 +45,11 @@
                                                 <action selector="closeSubViewButton:" destination="Y6W-OH-hqX" id="CxI-8T-BV3"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="追加" id="05A-eL-q6V"/>
+                                        <barButtonItem key="rightBarButtonItem" title="追加" id="05A-eL-q6V">
+                                            <connections>
+                                                <action selector="addButtonTapped:" destination="Y6W-OH-hqX" id="79a-D4-Fyv"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -61,7 +70,7 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タイトル" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ob-B3-XvX">
-                                <rect key="frame" x="10" y="261" width="373" height="70"/>
+                                <rect key="frame" x="10" y="263" width="373" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="PX1-aP-oYt"/>
                                 </constraints>
@@ -83,12 +92,13 @@
                             <constraint firstItem="Ih1-tB-adO" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="1rZ-xM-XtK"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1Ob-B3-XvX" secondAttribute="trailing" constant="10" id="2gT-xv-8WB"/>
                             <constraint firstItem="Mc4-8h-u9n" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="36e-Mf-FdP"/>
-                            <constraint firstItem="1Ob-B3-XvX" firstAttribute="top" secondItem="ASR-OY-UqK" secondAttribute="bottom" constant="38" id="4gc-cO-fB5"/>
+                            <constraint firstItem="1Ob-B3-XvX" firstAttribute="top" secondItem="ASR-OY-UqK" secondAttribute="bottom" constant="40" id="4gc-cO-fB5"/>
                             <constraint firstItem="1Ob-B3-XvX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="7pt-Xr-7uw"/>
                             <constraint firstItem="Mc4-8h-u9n" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="8f7-FF-L0I"/>
                             <constraint firstItem="ASR-OY-UqK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="EBH-R4-gc7"/>
                             <constraint firstItem="3Nl-n9-4D2" firstAttribute="leading" secondItem="ASR-OY-UqK" secondAttribute="trailing" constant="10" id="Erj-Ka-qYP"/>
                             <constraint firstAttribute="trailing" secondItem="Mc4-8h-u9n" secondAttribute="trailing" id="FM7-fB-Pa7"/>
+                            <constraint firstItem="5uv-mf-jOF" firstAttribute="top" secondItem="1Ob-B3-XvX" secondAttribute="bottom" constant="40" id="UED-Xq-fvX"/>
                             <constraint firstItem="Ih1-tB-adO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="YKq-QQ-nkf"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3Nl-n9-4D2" secondAttribute="trailing" constant="10" id="fRL-W5-Xf6"/>
                             <constraint firstItem="3Nl-n9-4D2" firstAttribute="top" secondItem="Mc4-8h-u9n" secondAttribute="bottom" constant="60" id="gc2-XX-B9c"/>
@@ -96,14 +106,19 @@
                             <constraint firstItem="Ih1-tB-adO" firstAttribute="top" secondItem="ZCv-iN-SKL" secondAttribute="bottom" id="r9K-bj-yaQ"/>
                             <constraint firstItem="Ih1-tB-adO" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="rof-El-gIH"/>
                             <constraint firstItem="ZCv-iN-SKL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="sTX-nq-mUw"/>
+                            <constraint firstItem="5uv-mf-jOF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="uJu-NX-1LQ"/>
                             <constraint firstItem="ASR-OY-UqK" firstAttribute="top" secondItem="Mc4-8h-u9n" secondAttribute="bottom" constant="50" id="wS5-ae-lxu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5uv-mf-jOF" secondAttribute="trailing" constant="10" id="xPQ-y6-ady"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="5uv-mf-jOF" secondAttribute="bottom" id="yUV-8W-2oZ"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addButton" destination="05A-eL-q6V" id="YWj-bx-Wb8"/>
                         <outlet property="categoryButton" destination="3Nl-n9-4D2" id="Qpu-Tw-kGh"/>
                         <outlet property="categoryTextField" destination="ASR-OY-UqK" id="Lfb-rB-8gQ"/>
+                        <outlet property="messageTextField" destination="5uv-mf-jOF" id="mLm-0O-QQd"/>
                         <outlet property="pickerView" destination="Ih1-tB-adO" id="5HY-mG-mL1"/>
                         <outlet property="titleTextField" destination="1Ob-B3-XvX" id="nUF-Uc-EBY"/>
                         <outlet property="toolBar" destination="ZCv-iN-SKL" id="054-AV-3Kh"/>
@@ -111,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2094" y="-115"/>
+            <point key="canvasLocation" x="-2718" y="-225"/>
         </scene>
     </scenes>
     <resources>
