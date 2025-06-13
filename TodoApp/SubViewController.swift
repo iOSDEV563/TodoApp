@@ -12,6 +12,8 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var toolBar: UIToolbar!
+    
     let categories = ["緊急＆重要", "緊急", "不要", "重要"]
     
     
@@ -21,6 +23,16 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     
     @IBAction func categoryButtonTapped(_ sender: UIButton) {
         pickerView.isHidden = !pickerView.isHidden
+        toolBar.isHidden = !toolBar.isHidden
+    }
+    
+    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem){
+        let selectedRow = pickerView.selectedRow(inComponent: 0)
+        let selectedCategory = categories[selectedRow]
+        categoryLabel.text = selectedCategory
+        pickerView.isHidden = true
+        toolBar.isHidden = true
+        categoryLabel.textColor = .black
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -36,11 +48,11 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         return categories[row]
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    /*func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         categoryLabel.text = categories[row]
         categoryLabel.textColor = .black
         pickerView.isHidden = true
-    }
+    }*/
     
     @IBOutlet weak var CategoryBoxView: UIView!
     
@@ -51,6 +63,8 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         pickerView.delegate = self
         pickerView.isHidden = true
         
+        toolBar.isHidden = true
+        
       CategoryBoxView.layer.borderColor = UIColor.black.cgColor
         CategoryBoxView.layer.borderWidth = 1
         
@@ -58,7 +72,6 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         
         // Do any additional setup after loading the view.
     }
-    
     
     
     

@@ -82,6 +82,18 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCv-iN-SKL">
+                                <rect key="frame" x="0.0" y="509" width="393" height="44"/>
+                                <items>
+                                    <barButtonItem title="cancel" id="SI9-mR-7ob"/>
+                                    <barButtonItem width="252" style="plain" systemItem="fixedSpace" id="04q-9t-Q2M"/>
+                                    <barButtonItem title="done" width="454.66666666666663" id="NSz-9q-WuW">
+                                        <connections>
+                                            <action selector="doneButtonTapped:" destination="Y6W-OH-hqX" id="BLd-V2-Nki"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -91,7 +103,10 @@
                             <constraint firstItem="Mc4-8h-u9n" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="8f7-FF-L0I"/>
                             <constraint firstAttribute="trailing" secondItem="Mc4-8h-u9n" secondAttribute="trailing" id="FM7-fB-Pa7"/>
                             <constraint firstItem="Ih1-tB-adO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="YKq-QQ-nkf"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Ih1-tB-adO" secondAttribute="bottom" id="y8u-dL-Kpq"/>
+                            <constraint firstAttribute="trailing" secondItem="ZCv-iN-SKL" secondAttribute="trailing" id="hDd-63-T8f"/>
+                            <constraint firstItem="Ih1-tB-adO" firstAttribute="top" secondItem="ZCv-iN-SKL" secondAttribute="bottom" id="r9K-bj-yaQ"/>
+                            <constraint firstItem="Ih1-tB-adO" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="rof-El-gIH"/>
+                            <constraint firstItem="ZCv-iN-SKL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="sTX-nq-mUw"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -101,11 +116,12 @@
                         <outlet property="categoryButton" destination="3Nl-n9-4D2" id="MRB-C7-wGB"/>
                         <outlet property="categoryLabel" destination="PIB-QK-3kn" id="erq-7y-fVZ"/>
                         <outlet property="pickerView" destination="Ih1-tB-adO" id="5HY-mG-mL1"/>
+                        <outlet property="toolBar" destination="ZCv-iN-SKL" id="J6J-MS-jVh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-565.64885496183206" y="-56.338028169014088"/>
+            <point key="canvasLocation" x="-811" y="-55"/>
         </scene>
     </scenes>
     <resources>
