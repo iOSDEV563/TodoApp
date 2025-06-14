@@ -19,7 +19,7 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
     
     @IBOutlet weak var subViewButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    
+    //上で定義したTodoItemの要素を配列としてデータを保持
     var todoItems: [TodoItem] = []
     
     override func viewDidLoad() {
@@ -33,18 +33,24 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
         //タップされた時の動作
         subViewButton.addTarget(self, action: #selector(self.buttonTapped(_:)), for: UIControl.Event.touchUpInside)
     }
-    //タップされた時の処理
-    @objc func buttonTapped(_ sender: UIButton) {
+    
+    //+ボタンがタップされた時の処理
+    @IBAction func buttonTapped(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "SubStoryboard", bundle: nil)
+        //SubViewControllerの取得（画面遷移のため）
         guard let subVC = storyboard.instantiateViewController(withIdentifier: "SubViewController") as? SubViewController else{print("ViewControllerが見つかりません")
             return }
+        //ここでSubViewControllerからデータを受け取る準備
         subVC.delegate = self
+        //モーダル画面遷移
         self.present(subVC, animated: true)
     }
+    
     
     func didAddTodoItem(title: String, message: String, category: String) {
         let newItem: TodoItem = TodoItem(title: title, message: message, category: category)
         todoItems.append(newItem)
+        //データの更新
         tableView.reloadData()
     }
     

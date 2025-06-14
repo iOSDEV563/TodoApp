@@ -7,6 +7,7 @@
 
 import UIKit
 
+//プロトコル宣言ここで受け渡しの内容を記述
 protocol SubViewControllerDelegate: AnyObject {
     func didAddTodoItem(title: String, message: String, category: String)
 }
@@ -28,26 +29,30 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         
     let categories = ["緊急＆重要", "緊急", "不要", "重要"]
     
-    
+    //閉じるボタンを押した時の処理
     @IBAction func closeSubViewButton(_ sender: UIButton) {
+        //画面を閉じてmainに戻る
         self.dismiss(animated: true, completion: nil)
     }
     
+    //追加ボタンを押した時の処理
     @IBAction func addButtonTapped(_ sender: UIButton) {
         let title = titleTextField.text ?? ""
         let message = messageTextField.text ?? ""
         let category = categoryTextField.text ?? ""
-        
+        //ここでmainにデータを受け渡し
         delegate?.didAddTodoItem(title: title, message: message, category: category)
-        
+        //画面を閉じてmainに戻る
         self.dismiss(animated: true, completion: nil)
     }
     
+    //カテゴリ選択
     @IBAction func categoryButtonTapped(_ sender: UIButton) {
         pickerView.isHidden = !pickerView.isHidden
         toolBar.isHidden = !toolBar.isHidden
     }
     
+    //pickerViewの選択決定
     @IBAction func doneButtonTapped(_ sender: UIBarButtonItem){
         let selectedRow = pickerView.selectedRow(inComponent: 0)
         let selectedCategory = categories[selectedRow]
@@ -56,7 +61,7 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         toolBar.isHidden = true
         categoryTextField.textColor = .black
     }
-    
+    //pickerViewのcancelボタン
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
         pickerView.isHidden = true
         toolBar.isHidden = true
@@ -72,15 +77,10 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     }
     
     // MARK: - UIPickerViewDelegate
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return categories[row]
     }
-    
-    /*func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        categoryLabel.text = categories[row]
-        categoryLabel.textColor = .black
-        pickerView.isHidden = true
-    }*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,13 +90,13 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         pickerView.isHidden = true
         
         toolBar.isHidden = true
-        
+        //カテゴリの枠線
         categoryTextField.layer.borderColor = UIColor.black.cgColor
         categoryTextField.layer.borderWidth = 1
-        
+        //タイトルの枠線
         titleTextField.layer.borderColor = UIColor.black.cgColor
         titleTextField.layer.borderWidth = 1
-        
+        //メッセージの枠線
         messageTextField.layer.borderColor = UIColor.black.cgColor
         messageTextField.layer.borderWidth = 1
         
