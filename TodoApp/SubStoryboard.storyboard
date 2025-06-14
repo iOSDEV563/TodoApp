@@ -16,26 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Nl-n9-4D2">
-                                <rect key="frame" x="335.33333333333331" y="163" width="47.666666666666686" height="50"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="▼">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="categoryButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="64G-2f-STE"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メッセージ" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5uv-mf-jOF">
-                                <rect key="frame" x="10" y="373" width="373" height="396"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Ih1-tB-adO">
-                                <rect key="frame" x="0.0" y="553" width="393" height="216"/>
-                                <color key="backgroundColor" systemColor="systemGray2Color"/>
-                            </pickerView>
                             <navigationBar contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Mc4-8h-u9n">
                                 <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                                 <items>
@@ -53,6 +33,27 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="カテゴリ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ASR-OY-UqK">
+                                <rect key="frame" x="10" y="153" width="373" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="2yg-iC-xnT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タイトル" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ob-B3-XvX">
+                                <rect key="frame" x="10" y="263" width="373" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="PX1-aP-oYt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メッセージ" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5uv-mf-jOF">
+                                <rect key="frame" x="10" y="373" width="373" height="396"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCv-iN-SKL">
                                 <rect key="frame" x="0.0" y="509" width="393" height="44"/>
                                 <items>
@@ -69,22 +70,21 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タイトル" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ob-B3-XvX">
-                                <rect key="frame" x="10" y="263" width="373" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="PX1-aP-oYt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="カテゴリ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ASR-OY-UqK">
-                                <rect key="frame" x="10" y="153" width="315.33333333333331" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="2yg-iC-xnT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Ih1-tB-adO">
+                                <rect key="frame" x="0.0" y="553" width="393" height="216"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Nl-n9-4D2">
+                                <rect key="frame" x="335.33333333333331" y="163" width="47.666666666666686" height="50"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="▼">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="categoryButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="64G-2f-STE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -96,7 +96,7 @@
                             <constraint firstItem="1Ob-B3-XvX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="7pt-Xr-7uw"/>
                             <constraint firstItem="Mc4-8h-u9n" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="8f7-FF-L0I"/>
                             <constraint firstItem="ASR-OY-UqK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="EBH-R4-gc7"/>
-                            <constraint firstItem="3Nl-n9-4D2" firstAttribute="leading" secondItem="ASR-OY-UqK" secondAttribute="trailing" constant="10" id="Erj-Ka-qYP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ASR-OY-UqK" secondAttribute="trailing" constant="10" id="Erj-Ka-qYP"/>
                             <constraint firstAttribute="trailing" secondItem="Mc4-8h-u9n" secondAttribute="trailing" id="FM7-fB-Pa7"/>
                             <constraint firstItem="5uv-mf-jOF" firstAttribute="top" secondItem="1Ob-B3-XvX" secondAttribute="bottom" constant="40" id="UED-Xq-fvX"/>
                             <constraint firstItem="Ih1-tB-adO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="YKq-QQ-nkf"/>
@@ -126,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2718" y="-225"/>
+            <point key="canvasLocation" x="-2947" y="-230"/>
         </scene>
     </scenes>
     <resources>

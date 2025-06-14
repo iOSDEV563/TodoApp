@@ -26,6 +26,7 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     }
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func categoryButtonTapped(_ sender: UIButton) {
