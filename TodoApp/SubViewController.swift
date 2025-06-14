@@ -7,7 +7,15 @@
 
 import UIKit
 
+protocol SubViewControllerDelegate: AnyObject {
+    func didAddTodoItem(title: String, message: String, category: String)
+}
+
+
+
 class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    weak var delegate: SubViewControllerDelegate?
     
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
@@ -26,6 +34,12 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     }
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
+        let title = titleTextField.text ?? ""
+        let message = messageTextField.text ?? ""
+        let category = categoryTextField.text ?? ""
+        
+        delegate?.didAddTodoItem(title: title, message: message, category: category)
+        
         self.dismiss(animated: true, completion: nil)
     }
     
