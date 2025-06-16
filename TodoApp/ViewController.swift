@@ -15,10 +15,15 @@ struct TodoItem {
 
 
 
-class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDataSource {
+class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var subViewButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emergencyImportantCountLabel: UILabel!
+    @IBOutlet weak var importantCountLabel: UILabel!
+    @IBOutlet weak var unnecessaryCountLabel: UILabel!
+    @IBOutlet weak var emergencyCountLabel: UILabel!
+    
     //上で定義したTodoItemの要素を配列としてデータを保持
     var todoItems: [TodoItem] = []
     
@@ -27,6 +32,7 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
         subViewButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         
         tableView.dataSource = self
+        tableView.delegate = self
         
         // Do any additional setup after loading the view.
         
@@ -59,11 +65,18 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as! TodoCell
         let item = todoItems[indexPath.row]
-        cell.textLabel?.text = item.title
-        cell.detailTextLabel?.text = item.message
+        cell.titleLabel?.text = item.title
+        cell.messageLabel?.text = item.message
+        //件数更新
+        emergencyImportantCountLabel.text = "\(todoItems.filter({ $0.category == "緊急＆重要" }).count)"
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     
