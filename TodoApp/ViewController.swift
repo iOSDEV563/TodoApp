@@ -71,12 +71,15 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
         cell.messageLabel?.text = item.message
         //件数更新
         emergencyImportantCountLabel.text = "\(todoItems.filter({ $0.category == "緊急＆重要" }).count)"
+        importantCountLabel.text = "\(todoItems.filter({ $0.category == "重要" }).count)"
+        unnecessaryCountLabel.text = "\(todoItems.filter({ $0.category == "不要" }).count)"
+        emergencyCountLabel.text = "\(todoItems.filter({ $0.category == "緊急" }).count)"
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 80
     }
     
     
