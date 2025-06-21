@@ -205,6 +205,15 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZJ-Fy-aZB">
+                                        <rect key="frame" x="0.0" y="0.0" width="166" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="emergencyViewButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c9o-05-hkJ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
@@ -326,6 +335,7 @@
                         <outlet property="emergencyCountLabel" destination="Ucv-IK-INR" id="uv8-zJ-wmr"/>
                         <outlet property="emergencyImportantCountLabel" destination="493-Nc-l2w" id="Zt2-66-kOH"/>
                         <outlet property="emergencyImportantViewButton" destination="HKI-Hp-vgb" id="SM7-T5-2LF"/>
+                        <outlet property="emergencyViewButton" destination="lZJ-Fy-aZB" id="i5M-yr-ca2"/>
                         <outlet property="importantCountLabel" destination="WaL-9D-OT4" id="EUI-Ya-b5r"/>
                         <outlet property="subViewButton" destination="Lvj-K9-eNg" id="sQA-qp-Kyt"/>
                         <outlet property="tableView" destination="sgQ-Jr-XFV" id="ZfC-sO-YTe"/>

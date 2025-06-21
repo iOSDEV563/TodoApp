@@ -23,7 +23,9 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
     @IBOutlet weak var importantCountLabel: UILabel!
     @IBOutlet weak var unnecessaryCountLabel: UILabel!
     @IBOutlet weak var emergencyCountLabel: UILabel!
+    
     @IBOutlet weak var emergencyImportantViewButton: UIButton!
+    @IBOutlet weak var emergencyViewButton: UIButton!
     
     //上で定義したTodoItemの要素を配列としてデータを保持
     var todoItems: [TodoItem] = []
@@ -36,6 +38,8 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
         subViewButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         
         emergencyImportantViewButton.addTarget(self, action: #selector(emergencyImportantViewButtonTapped(_:)), for: .touchUpInside)
+        
+        emergencyViewButton.addTarget(self, action: #selector(emergencyViewButtonTapped(_:)), for: .touchUpInside)
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -69,6 +73,15 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
         self.present(subVC, animated: true)
     }
     
+    //緊急をタップした時
+    @IBAction func emergencyViewButtonTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "EmergencyStoryboard", bundle: nil)
+        //EmergencyViewControllerの取得（画面遷移のため）
+        guard let subVC = storyboard.instantiateViewController(withIdentifier: "EmergencyViewController") as? EmergencyViewController else{print("ViewControllerが見つかりません")
+            return }
+        //モーダル画面遷移
+        self.present(subVC, animated: true)
+    }
     
     
     func didAddTodoItem(title: String, message: String, category: String) {
