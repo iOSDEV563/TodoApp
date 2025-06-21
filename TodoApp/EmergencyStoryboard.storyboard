@@ -16,16 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IL8-9K-l7A">
-                                <rect key="frame" x="16" y="20" width="72" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IL8-9K-l7A">
+                                <rect key="frame" x="0.0" y="41" width="72" height="34.333333333333329"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="閉じる"/>
                                 <connections>
                                     <action selector="closeEmergencyViewButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="t5g-l2-dx9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="緊急" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1z-3W-4MJ">
-                                <rect key="frame" x="116.66666666666666" y="20" width="160" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="緊急" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1z-3W-4MJ">
+                                <rect key="frame" x="116.66666666666669" y="20" width="160" height="76"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="e9C-IW-6Fm"/>
@@ -44,11 +44,10 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="IL8-9K-l7A" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="20" id="6uY-eG-8sk"/>
                             <constraint firstItem="IL8-9K-l7A" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="87h-Xf-u4q"/>
                             <constraint firstItem="m1z-3W-4MJ" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="20" id="BTF-1v-3j0"/>
                             <constraint firstItem="m1z-3W-4MJ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Fig-gQ-ceP"/>
-                            <constraint firstItem="IL8-9K-l7A" firstAttribute="centerY" secondItem="m1z-3W-4MJ" secondAttribute="centerY" constant="2.5" id="Ghv-E7-sFt"/>
+                            <constraint firstItem="IL8-9K-l7A" firstAttribute="centerY" secondItem="m1z-3W-4MJ" secondAttribute="centerY" id="Ghv-E7-sFt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="m1z-3W-4MJ" secondAttribute="bottom" constant="688" id="RfC-YX-ksw"/>
                         </constraints>
                     </view>

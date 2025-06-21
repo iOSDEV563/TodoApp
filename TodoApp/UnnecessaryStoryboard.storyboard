@@ -16,16 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1g3-ps-vO5">
-                                <rect key="frame" x="16" y="20" width="72" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1g3-ps-vO5">
+                                <rect key="frame" x="0.0" y="41" width="72" height="34.333333333333329"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="閉じる"/>
                                 <connections>
                                     <action selector="closeunnecessaryViewButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iFj-Xe-VoK"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="不要" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSF-AJ-cGR">
-                                <rect key="frame" x="116.66666666666666" y="20" width="160" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="不要" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSF-AJ-cGR">
+                                <rect key="frame" x="116.66666666666669" y="20" width="160" height="76"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="T4I-RO-cRj"/>
@@ -46,10 +46,9 @@
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="cSF-AJ-cGR" secondAttribute="bottom" constant="688" id="GaU-IY-4LN"/>
                             <constraint firstItem="cSF-AJ-cGR" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="20" id="I1L-ql-eD0"/>
-                            <constraint firstItem="1g3-ps-vO5" firstAttribute="centerY" secondItem="cSF-AJ-cGR" secondAttribute="centerY" constant="2.5" id="KTg-l5-TSe"/>
+                            <constraint firstItem="1g3-ps-vO5" firstAttribute="centerY" secondItem="cSF-AJ-cGR" secondAttribute="centerY" id="KTg-l5-TSe"/>
                             <constraint firstItem="1g3-ps-vO5" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="QT1-Rj-CBl"/>
                             <constraint firstItem="cSF-AJ-cGR" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="WuU-ll-Dx8"/>
-                            <constraint firstItem="1g3-ps-vO5" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="20" id="kPh-QL-Dng"/>
                         </constraints>
                     </view>
                 </viewController>
