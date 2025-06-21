@@ -107,6 +107,15 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynJ-9x-dj8">
+                                        <rect key="frame" x="0.0" y="0.0" width="166" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="importantViewButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SPc-AP-Ik0"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
@@ -337,6 +346,7 @@
                         <outlet property="emergencyImportantViewButton" destination="HKI-Hp-vgb" id="SM7-T5-2LF"/>
                         <outlet property="emergencyViewButton" destination="lZJ-Fy-aZB" id="i5M-yr-ca2"/>
                         <outlet property="importantCountLabel" destination="WaL-9D-OT4" id="EUI-Ya-b5r"/>
+                        <outlet property="importantViewButton" destination="ynJ-9x-dj8" id="QaJ-0z-5Zt"/>
                         <outlet property="subViewButton" destination="Lvj-K9-eNg" id="sQA-qp-Kyt"/>
                         <outlet property="tableView" destination="sgQ-Jr-XFV" id="ZfC-sO-YTe"/>
                         <outlet property="unnecessaryCountLabel" destination="TtN-5P-Nef" id="rJ9-A2-S9m"/>

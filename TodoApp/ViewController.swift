@@ -19,13 +19,15 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
     
     @IBOutlet weak var subViewButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    //各カテゴリの件数ラベル
     @IBOutlet weak var emergencyImportantCountLabel: UILabel!
     @IBOutlet weak var importantCountLabel: UILabel!
     @IBOutlet weak var unnecessaryCountLabel: UILabel!
     @IBOutlet weak var emergencyCountLabel: UILabel!
-    
+    //各カテゴリを押した時のボタン
     @IBOutlet weak var emergencyImportantViewButton: UIButton!
     @IBOutlet weak var emergencyViewButton: UIButton!
+    @IBOutlet weak var importantViewButton: UIButton!
     
     //上で定義したTodoItemの要素を配列としてデータを保持
     var todoItems: [TodoItem] = []
@@ -40,6 +42,8 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
         emergencyImportantViewButton.addTarget(self, action: #selector(emergencyImportantViewButtonTapped(_:)), for: .touchUpInside)
         
         emergencyViewButton.addTarget(self, action: #selector(emergencyViewButtonTapped(_:)), for: .touchUpInside)
+        
+        importantViewButton.addTarget(self, action: #selector(importantViewButtonTapped(_:)), for: .touchUpInside)
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -82,7 +86,15 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
         //モーダル画面遷移
         self.present(subVC, animated: true)
     }
-    
+    //重要をタップした時
+    @IBAction func importantViewButtonTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "ImportantStoryboard", bundle: nil)
+        //EmergencyViewControllerの取得（画面遷移のため）
+        guard let subVC = storyboard.instantiateViewController(withIdentifier: "ImportantViewController") as? ImportantViewController else{print("ViewControllerが見つかりません")
+            return }
+        //モーダル画面遷移
+        self.present(subVC, animated: true)
+    }
     
     func didAddTodoItem(title: String, message: String, category: String) {
         let newItem: TodoItem = TodoItem(title: title, message: message, category: category)
