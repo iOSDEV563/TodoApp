@@ -23,21 +23,28 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
     @IBOutlet weak var importantCountLabel: UILabel!
     @IBOutlet weak var unnecessaryCountLabel: UILabel!
     @IBOutlet weak var emergencyCountLabel: UILabel!
+    @IBOutlet weak var emergencyImportantViewButton: UIButton!
     
     //上で定義したTodoItemの要素を配列としてデータを保持
     var todoItems: [TodoItem] = []
     
     override func viewDidLoad() {
+        // Do any additional setup after loading the view.
+        
         super.viewDidLoad()
+        
         subViewButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+        
+        emergencyImportantViewButton.addTarget(self, action: #selector(emergencyImportantViewButtonTapped(_:)), for: .touchUpInside)
         
         tableView.dataSource = self
         tableView.delegate = self
         
-        // Do any additional setup after loading the view.
-        
         //タップされた時の動作
         subViewButton.addTarget(self, action: #selector(self.buttonTapped(_:)), for: UIControl.Event.touchUpInside)
+        
+        subViewButton.addTarget(self, action: #selector(buttonTapped(_:)), for: UIControl.Event.touchUpInside)
+        
     }
     
     //+ボタンがタップされた時の処理
@@ -51,6 +58,17 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
         //モーダル画面遷移
         self.present(subVC, animated: true)
     }
+    
+    //緊急＆重要をタップした時
+    @IBAction func emergencyImportantViewButtonTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "EmergencyImportantStoryboard", bundle: nil)
+        //EmergencyImportantViewControllerの取得（画面遷移のため）
+        guard let subVC = storyboard.instantiateViewController(withIdentifier: "EmergencyImportantViewController") as? EmergencyImportantViewController else{print("ViewControllerが見つかりません")
+            return }
+        //モーダル画面遷移
+        self.present(subVC, animated: true)
+    }
+    
     
     
     func didAddTodoItem(title: String, message: String, category: String) {

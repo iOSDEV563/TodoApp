@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Mc4-8h-u9n">
-                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="44"/>
                                 <items>
                                     <navigationItem title="新規タスク" id="PQM-tX-3Y3">
                                         <barButtonItem key="leftBarButtonItem" title="閉じる" id="AI9-yB-X37">
@@ -34,7 +34,7 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="カテゴリ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ASR-OY-UqK">
-                                <rect key="frame" x="10" y="153" width="373" height="70"/>
+                                <rect key="frame" x="10" y="212" width="373" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="2yg-iC-xnT"/>
                                 </constraints>
@@ -42,7 +42,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タイトル" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ob-B3-XvX">
-                                <rect key="frame" x="10" y="263" width="373" height="70"/>
+                                <rect key="frame" x="10" y="322" width="373" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="PX1-aP-oYt"/>
                                 </constraints>
@@ -50,12 +50,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メッセージ" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5uv-mf-jOF">
-                                <rect key="frame" x="10" y="373" width="373" height="396"/>
+                                <rect key="frame" x="10" y="432" width="373" height="303"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCv-iN-SKL">
-                                <rect key="frame" x="0.0" y="509" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="475" width="393" height="44"/>
                                 <items>
                                     <barButtonItem title="cancel" id="SI9-mR-7ob">
                                         <connections>
@@ -71,11 +71,11 @@
                                 </items>
                             </toolbar>
                             <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Ih1-tB-adO">
-                                <rect key="frame" x="0.0" y="553" width="393" height="216"/>
+                                <rect key="frame" x="0.0" y="519" width="393" height="216"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Nl-n9-4D2">
-                                <rect key="frame" x="335.33333333333331" y="163" width="47.666666666666686" height="50"/>
+                                <rect key="frame" x="335.33333333333331" y="222" width="47.666666666666686" height="50"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="▼">
@@ -126,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2947" y="-230"/>
+            <point key="canvasLocation" x="-3244" y="-239"/>
         </scene>
     </scenes>
     <resources>
