@@ -28,6 +28,7 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
     @IBOutlet weak var emergencyImportantViewButton: UIButton!
     @IBOutlet weak var emergencyViewButton: UIButton!
     @IBOutlet weak var importantViewButton: UIButton!
+    @IBOutlet weak var unnecessaryViewButton: UIButton!
     
     //上で定義したTodoItemの要素を配列としてデータを保持
     var todoItems: [TodoItem] = []
@@ -44,6 +45,8 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
         emergencyViewButton.addTarget(self, action: #selector(emergencyViewButtonTapped(_:)), for: .touchUpInside)
         
         importantViewButton.addTarget(self, action: #selector(importantViewButtonTapped(_:)), for: .touchUpInside)
+        
+        unnecessaryViewButton.addTarget(self, action: #selector(unnecessaryViewButtonTapped(_:)), for: .touchUpInside)
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -86,11 +89,21 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
         //モーダル画面遷移
         self.present(subVC, animated: true)
     }
+    
     //重要をタップした時
     @IBAction func importantViewButtonTapped(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "ImportantStoryboard", bundle: nil)
         //EmergencyViewControllerの取得（画面遷移のため）
         guard let subVC = storyboard.instantiateViewController(withIdentifier: "ImportantViewController") as? ImportantViewController else{print("ViewControllerが見つかりません")
+            return }
+        //モーダル画面遷移
+        self.present(subVC, animated: true)
+    }
+    
+    @IBAction func unnecessaryViewButtonTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "UnnecessaryStoryboard", bundle: nil)
+        //UnnecessaryViewControllerの取得（画面遷移のため）
+        guard let subVC = storyboard.instantiateViewController(withIdentifier: "UnnecessaryViewController") as? UnnecessaryViewController else{print("ViewControllerが見つかりません")
             return }
         //モーダル画面遷移
         self.present(subVC, animated: true)

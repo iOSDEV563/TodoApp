@@ -165,6 +165,15 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoD-qt-V8A">
+                                        <rect key="frame" x="0.0" y="0.0" width="166" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="unnecessaryViewButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2p9-b6-CCz"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
@@ -350,6 +359,7 @@
                         <outlet property="subViewButton" destination="Lvj-K9-eNg" id="sQA-qp-Kyt"/>
                         <outlet property="tableView" destination="sgQ-Jr-XFV" id="ZfC-sO-YTe"/>
                         <outlet property="unnecessaryCountLabel" destination="TtN-5P-Nef" id="rJ9-A2-S9m"/>
+                        <outlet property="unnecessaryViewButton" destination="qoD-qt-V8A" id="eGF-jA-is8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
