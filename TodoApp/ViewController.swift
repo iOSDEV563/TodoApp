@@ -76,6 +76,9 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
         //EmergencyImportantViewControllerの取得（画面遷移のため）
         guard let subVC = storyboard.instantiateViewController(withIdentifier: "EmergencyImportantViewController") as? EmergencyImportantViewController else{print("ViewControllerが見つかりません")
             return }
+        
+        subVC.todoItems = todoItems.filter { $0.category == "緊急＆重要" }
+        
         //モーダル画面遷移
         self.present(subVC, animated: true)
     }
@@ -143,7 +146,7 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
     
 
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -151,7 +154,7 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
      // Get the new view controller using segue.destination.
      // Pass the selected object to the new view controller.
      }
-     */
+     
     
 }
 
