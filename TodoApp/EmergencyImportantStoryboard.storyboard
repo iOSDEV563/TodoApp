@@ -52,13 +52,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znm-Ot-q17">
-                                                    <rect key="frame" x="299" y="10.999999999999998" width="48" height="30.333333333333329"/>
+                                                    <rect key="frame" x="297" y="10.999999999999998" width="50" height="30.333333333333329"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="MPG-Q7-HJT"/>
+                                                        <constraint firstAttribute="height" constant="30" id="Oel-L5-6y4"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceP-Yi-nCB">
-                                                    <rect key="frame" x="46" y="10.999999999999998" width="50" height="30.333333333333329"/>
+                                                    <rect key="frame" x="46" y="11" width="50" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="iYo-7I-g6y"/>
                                                         <constraint firstAttribute="height" constant="30" id="mRw-VB-fYk"/>
@@ -108,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-382.44274809160305" y="-301.40845070422534"/>
+            <point key="canvasLocation" x="-628" y="-299"/>
         </scene>
     </scenes>
     <resources>

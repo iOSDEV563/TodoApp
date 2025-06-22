@@ -89,6 +89,8 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
         //EmergencyViewControllerの取得（画面遷移のため）
         guard let subVC = storyboard.instantiateViewController(withIdentifier: "EmergencyViewController") as? EmergencyViewController else{print("ViewControllerが見つかりません")
             return }
+        
+        subVC.todoItems = todoItems.filter { $0.category == "緊急" }
         //モーダル画面遷移
         self.present(subVC, animated: true)
     }
@@ -99,6 +101,8 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
         //EmergencyViewControllerの取得（画面遷移のため）
         guard let subVC = storyboard.instantiateViewController(withIdentifier: "ImportantViewController") as? ImportantViewController else{print("ViewControllerが見つかりません")
             return }
+        
+        subVC.todoItems = todoItems.filter { $0.category == "重要" }
         //モーダル画面遷移
         self.present(subVC, animated: true)
     }
@@ -108,6 +112,8 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
         //UnnecessaryViewControllerの取得（画面遷移のため）
         guard let subVC = storyboard.instantiateViewController(withIdentifier: "UnnecessaryViewController") as? UnnecessaryViewController else{print("ViewControllerが見つかりません")
             return }
+        
+        subVC.todoItems = todoItems.filter { $0.category == "不要" }
         //モーダル画面遷移
         self.present(subVC, animated: true)
     }
