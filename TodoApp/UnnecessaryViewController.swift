@@ -31,7 +31,7 @@ class UnnecessaryViewController: UIViewController,UITableViewDelegate, UITableVi
     
     //table viewの中身
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as! UnnecessaryTodoCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UnnecessaryTodoCell", for: indexPath) as! UnnecessaryTodoCell
         let item = todoItems[indexPath.row]
         cell.titleLabel?.text = item.title
         cell.messageLabel?.text = item.message

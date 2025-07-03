@@ -31,7 +31,7 @@ class ImportantViewController: UIViewController,UITableViewDelegate, UITableView
     
     //table viewの中身
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as! ImportantTodoCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ImportantTodoCell", for: indexPath) as! ImportantTodoCell
         let item = todoItems[indexPath.row]
         cell.titleLabel?.text = item.title
         cell.messageLabel?.text = item.message

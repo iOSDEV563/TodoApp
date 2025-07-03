@@ -31,7 +31,7 @@ class EmergencyViewController: UIViewController,UITableViewDelegate, UITableView
     
     //table viewの中身
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as! EmergencyTodoCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EmergencyTodoCell", for: indexPath) as! EmergencyTodoCell
         let item = todoItems[indexPath.row]
         cell.titleLabel?.text = item.title
         cell.messageLabel?.text = item.message
