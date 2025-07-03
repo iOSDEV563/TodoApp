@@ -130,7 +130,7 @@ class ViewController: UIViewController, SubViewControllerDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as! TodoCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as! MainTodoCell
         let item = todoItems[indexPath.row]
         cell.titleLabel?.text = item.title
         cell.messageLabel?.text = item.message

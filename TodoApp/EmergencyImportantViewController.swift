@@ -32,9 +32,9 @@ class EmergencyImportantViewController: UIViewController, UITableViewDelegate, U
     
     //table viewの中身
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as! TodoCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as! EmergencyImportantTodoCell
         let item = todoItems[indexPath.row]
-        cell.textLabel?.text = item.title
+        cell.titleLabel?.text = item.title
         cell.messageLabel?.text = item.message
         return cell
     }

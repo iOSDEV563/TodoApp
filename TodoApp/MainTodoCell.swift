@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TodoCell: UITableViewCell {
+class MainTodoCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
