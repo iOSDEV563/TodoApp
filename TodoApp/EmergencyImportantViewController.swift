@@ -14,6 +14,7 @@ class EmergencyImportantViewController: UIViewController, UITableViewDelegate, U
         //画面を閉じてmainに戻る
         self.dismiss(animated: true, completion: nil)
     }
+    
     @IBOutlet weak var tableView: UITableView!
     var todoItems: [TodoItem] = []
 
@@ -22,8 +23,6 @@ class EmergencyImportantViewController: UIViewController, UITableViewDelegate, U
         //delegateとdataSourceを設定
         tableView.delegate = self
         tableView.dataSource = self
-        
-        // Do any additional setup after loading the view.
     }
     //tableViewの行数
     func tableView(_ tableView: UITableView,numberOfRowsInSection section: Int) -> Int {
@@ -42,16 +41,4 @@ class EmergencyImportantViewController: UIViewController, UITableViewDelegate, U
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
