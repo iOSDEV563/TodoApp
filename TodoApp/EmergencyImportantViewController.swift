@@ -9,35 +9,41 @@ import UIKit
 
 class EmergencyImportantViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    //閉じるボタンを押した時の処理
+    // MARK: - アウトレット
+    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - プロパティ
+    var todoItems: [TodoItem] = []
+    
+    // MARK: - ライフサイクル
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    // MARK: - アクション
     @IBAction func closeEmergencyImportantViewButton(_ sender: UIButton) {
         //画面を閉じてmainに戻る
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBOutlet weak var tableView: UITableView!
-    var todoItems: [TodoItem] = []
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //delegateとdataSourceを設定
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
-    //tableViewの行数
+   // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView,numberOfRowsInSection section: Int) -> Int {
         return todoItems.count
     }
-    
-    //table viewの中身
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EmergencyImportantTodoCell", for: indexPath) as! EmergencyImportantTodoCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "EmergencyImportantTodoCell", for: indexPath) as? EmergencyImportantTodoCell else {
+            fatalError( "EmergencyImportantTodoCellが見つかりません")
+        }
         let item = todoItems[indexPath.row]
         cell.titleLabel?.text = item.title
         cell.messageLabel?.text = item.message
         return cell
     }
     
+    // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
