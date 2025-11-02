@@ -41,7 +41,7 @@ class SubViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         let message = messageTextField.text ?? ""
         let category = categoryTextField.text ?? ""
         //ここでmainにデータを受け渡し
-        delegate?.didAddTodoItem(title: title, message: message, category: category)
+        delegate?.didAddTodoItem(title: title, message: message, category: category)//ここ変える
         //画面を閉じてmainに戻る
         self.dismiss(animated: true, completion: nil)
     }

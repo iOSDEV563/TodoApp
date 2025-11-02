@@ -9,12 +9,12 @@ import Foundation
 import FMDB
 
 struct Todo {
-    let id: Int?
-    let title: String
-    let message: String?
-    let category: Int
-    let isDone: Bool
-    let createdAt: Date
+    var id: Int?
+    var title: String
+    var message: String?
+    var category: Int
+    var isDone: Bool
+    var createdAt: Date
     
     init(id: Int? = nil, title: String, message: String? = nil, category: Int = 0, isDone: Bool = false, createdAt: Date = Date()) {
         self.id = id

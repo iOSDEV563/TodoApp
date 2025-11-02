@@ -34,7 +34,7 @@ final class DatabaseManager {
     }
     
     // MARK: - テーブル作成
-    private func createTablesIfNeeded() {
+    func createTablesIfNeeded() {
         let sql = """
         CREATE TABLE IF NOT EXISTS todos (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -111,7 +111,6 @@ final class DatabaseManager {
             }
         }
         return sucsess
-    }
     }
     
     // MARK: - Todo削除（DELETE）
