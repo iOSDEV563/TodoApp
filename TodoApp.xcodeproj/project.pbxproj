@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E57D93262BFA6062FF4C80F /* Pods_TodoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2057183F1D70DE508F993BE /* Pods_TodoApp.framework */; };
-		CC519F9A2E76CD4D00C0EDC9 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CC519F992E76CD4D00C0EDC9 /* Realm */; };
-		CC519F9C2E76CD4D00C0EDC9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CC519F9B2E76CD4D00C0EDC9 /* RealmSwift */; };
+		627A62C500B28B4EDE4FE485 /* Pods_TodoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628BAD5CD1AEBE69219F1BBD /* Pods_TodoApp.framework */; };
+		CC13AB2F2E91528F00781988 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CC13AA932E9147F500781988 /* libsqlite3.0.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		75844DECAD8AE2C919F17B8E /* Pods-TodoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoApp.debug.xcconfig"; path = "Target Support Files/Pods-TodoApp/Pods-TodoApp.debug.xcconfig"; sourceTree = "<group>"; };
-		C2057183F1D70DE508F993BE /* Pods_TodoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5E5F724C97B93AC5324272A /* Pods-TodoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoApp.release.xcconfig"; path = "Target Support Files/Pods-TodoApp/Pods-TodoApp.release.xcconfig"; sourceTree = "<group>"; };
+		5298D82F845588A1A782FA05 /* Pods-TodoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoApp.release.xcconfig"; path = "Target Support Files/Pods-TodoApp/Pods-TodoApp.release.xcconfig"; sourceTree = "<group>"; };
+		628BAD5CD1AEBE69219F1BBD /* Pods_TodoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC13AA922E9147F500781988 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		CC13AA932E9147F500781988 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		CCD8FFC02DAB730400B1BEF8 /* TodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EED6AEE11E95DCF8090BB087 /* Pods-TodoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoApp.debug.xcconfig"; path = "Target Support Files/Pods-TodoApp/Pods-TodoApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -45,30 +46,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC519F9C2E76CD4D00C0EDC9 /* RealmSwift in Frameworks */,
-				CC519F9A2E76CD4D00C0EDC9 /* Realm in Frameworks */,
-				4E57D93262BFA6062FF4C80F /* Pods_TodoApp.framework in Frameworks */,
+				CC13AB2F2E91528F00781988 /* libsqlite3.0.tbd in Frameworks */,
+				627A62C500B28B4EDE4FE485 /* Pods_TodoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0CD06D6CBC96AE2A2117A05C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				75844DECAD8AE2C919F17B8E /* Pods-TodoApp.debug.xcconfig */,
-				C5E5F724C97B93AC5324272A /* Pods-TodoApp.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		11A1599C3B32AA838781B365 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C2057183F1D70DE508F993BE /* Pods_TodoApp.framework */,
+				CC13AA922E9147F500781988 /* libsqlite3.tbd */,
+				CC13AA932E9147F500781988 /* libsqlite3.0.tbd */,
+				628BAD5CD1AEBE69219F1BBD /* Pods_TodoApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2F478925EB8FD60243FCF847 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EED6AEE11E95DCF8090BB087 /* Pods-TodoApp.debug.xcconfig */,
+				5298D82F845588A1A782FA05 /* Pods-TodoApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		CCD8FFB72DAB730400B1BEF8 = {
@@ -76,8 +78,8 @@
 			children = (
 				CCD8FFC22DAB730400B1BEF8 /* TodoApp */,
 				CCD8FFC12DAB730400B1BEF8 /* Products */,
-				0CD06D6CBC96AE2A2117A05C /* Pods */,
 				11A1599C3B32AA838781B365 /* Frameworks */,
+				2F478925EB8FD60243FCF847 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,11 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCD8FFD32DAB730700B1BEF8 /* Build configuration list for PBXNativeTarget "TodoApp" */;
 			buildPhases = (
-				062AAFC804364FE28BA0167B /* [CP] Check Pods Manifest.lock */,
+				C6C6E37FB93DD9416B7C354F /* [CP] Check Pods Manifest.lock */,
 				CCD8FFBC2DAB730400B1BEF8 /* Sources */,
 				CCD8FFBD2DAB730400B1BEF8 /* Frameworks */,
 				CCD8FFBE2DAB730400B1BEF8 /* Resources */,
-				0F5463864F4B2350FA64A2CD /* [CP] Embed Pods Frameworks */,
+				7B6D3D0B7D006FD5499E03D3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -110,10 +112,6 @@
 				CCD8FFC22DAB730400B1BEF8 /* TodoApp */,
 			);
 			name = TodoApp;
-			packageProductDependencies = (
-				CC519F992E76CD4D00C0EDC9 /* Realm */,
-				CC519F9B2E76CD4D00C0EDC9 /* RealmSwift */,
-			);
 			productName = TodoApp;
 			productReference = CCD8FFC02DAB730400B1BEF8 /* TodoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -142,9 +140,6 @@
 			);
 			mainGroup = CCD8FFB72DAB730400B1BEF8;
 			minimizedProjectReferenceProxies = 1;
-			packageReferences = (
-				CC519F982E76CD4D00C0EDC9 /* XCRemoteSwiftPackageReference "realm-swift" */,
-			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CCD8FFC12DAB730400B1BEF8 /* Products */;
 			projectDirPath = "";
@@ -166,7 +161,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		062AAFC804364FE28BA0167B /* [CP] Check Pods Manifest.lock */ = {
+		7B6D3D0B7D006FD5499E03D3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TodoApp/Pods-TodoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TodoApp/Pods-TodoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TodoApp/Pods-TodoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6C6E37FB93DD9416B7C354F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -188,27 +204,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		0F5463864F4B2350FA64A2CD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TodoApp/Pods-TodoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TodoApp/Pods-TodoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TodoApp/Pods-TodoApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -224,12 +219,13 @@
 /* Begin XCBuildConfiguration section */
 		CCD8FFD42DAB730700B1BEF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 75844DECAD8AE2C919F17B8E /* Pods-TodoApp.debug.xcconfig */;
+			baseConfigurationReference = EED6AEE11E95DCF8090BB087 /* Pods-TodoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TodoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -245,6 +241,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kou.TodoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -252,12 +249,13 @@
 		};
 		CCD8FFD52DAB730700B1BEF8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5E5F724C97B93AC5324272A /* Pods-TodoApp.release.xcconfig */;
+			baseConfigurationReference = 5298D82F845588A1A782FA05 /* Pods-TodoApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TodoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -273,6 +271,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kou.TodoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -282,6 +281,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = x86_64;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -345,6 +345,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = x86_64;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -419,30 +420,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		CC519F982E76CD4D00C0EDC9 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 20.0.3;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		CC519F992E76CD4D00C0EDC9 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CC519F982E76CD4D00C0EDC9 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		CC519F9B2E76CD4D00C0EDC9 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CC519F982E76CD4D00C0EDC9 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CCD8FFB82DAB730400B1BEF8 /* Project object */;
 }

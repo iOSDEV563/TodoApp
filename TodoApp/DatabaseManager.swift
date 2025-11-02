@@ -7,68 +7,128 @@
 import Foundation
 import FMDB
 
-class DatabaseManager {
+final class DatabaseManager {
+    // MARK: - シングルトン（アプリ全体で1つだけ使う）
     static let shared = DatabaseManager()
-    private init() {}
     
-    // MARK: - DBパス取得
-    func dbPath() -> String {
-        let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        return documentDirectory.appendingPathComponent("test.db").path
-    }
+    // MARK: - プロパティ
+    private let queue: FMDatabaseQueue
+    private let dbFileName = "todos.sqlite"
     
-    // MARK: - 初期コピー（必要なら強制上書き）
-    func setupDatabase(forceOverwrite: Bool = false) {
+    // MARK: - 初期化処理
+    private init() {
+        // ドキュメントフォルダのパスを取得（アプリごとに保存される安全な領域）
         let fileManager = FileManager.default
-        let path = dbPath()
+        let documentsURL = try! fileManager.url(for: .documentDirectory,
+                                                in: .userDomainMask,
+                                                appropriateFor: nil,
+                                                create: true)
+        // SQLiteファイルのパスを作成
+        let dbURL = documentsURL.appendingPathComponent(dbFileName)
         
-        if fileManager.fileExists(atPath: path) && !forceOverwrite {
-            print("DB file OK（既存ファイルを使用）")
-            return
-        }
+        // FMDatabaseQueueを作成（スレッド安全に操作できるキュー）
+        queue = FMDatabaseQueue(path: dbURL.path)!
         
-        do {
-            if fileManager.fileExists(atPath: path) {
-                try fileManager.removeItem(atPath: path)
-                print("既存DBを削除しました")
+        // アプリ初回起動時などにテーブルがなければ作成
+        createTablesIfNeeded()
+    }
+    
+    // MARK: - テーブル作成
+    private func createTablesIfNeeded() {
+        let sql = """
+        CREATE TABLE IF NOT EXISTS todos (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            title TEXT NOT NULL,
+            message TEXT,
+            category INTEGER NOT NULL,
+            is_done INTEGER NOT NULL DEFAULT 0,
+            created_at REAL NOT NULL
+        );
+        """
+        
+        queue.inDatabase { db in
+            do {
+                try db.executeUpdate(sql, values: nil)
+                print("✅ テーブル作成または存在確認OK")
+            } catch {
+                print("⚠️ テーブル作成エラー: \(error.localizedDescription)")
             }
-            
-            guard let defaultDBPath = Bundle.main.path(forResource: "test", ofType: "db") else {
-                print("バンドル内にtest.dbが見つかりません")
-                return
-            }
-            
-            try fileManager.copyItem(atPath: defaultDBPath, toPath: path)
-            print("DBコピー完了: \(path)")
-        } catch {
-            print("DBセットアップエラー: \(error)")
         }
     }
     
-    // MARK: - クエリ実行サンプル
-    func fetchQuiz(qNum: Int) -> (question: String?, answer: String?, commentary: String?) {
-        let db = FMDatabase(path: dbPath())
-        guard db.open() else {
-            print("DBオープン失敗")
-            return (nil, nil, nil)
-        }
-        
-        let sql = "SELECT * FROM quiz_tb WHERE id = ?;"
-        var question: String? = nil
-        var answer: String? = nil
-        var commentary: String? = nil
-        
-        if let results = try? db.executeQuery(sql, values: [qNum]) {
-            while results.next() {
-                question = results.string(forColumn: "question")
-                answer = results.string(forColumn: "answer")
-                commentary = results.string(forColumn: "commentary")
+    // MARK: - Todo追加（INSERT）
+    func insert(todo: Todo) -> Int? {
+        var lastId: Int?
+        let sql = "INSERT INTO todos (title, message, category, is_done, created_at) VALUES (?, ?, ?, ?, ?)"
+        queue.inDatabase { db in
+            do {
+                try db.executeUpdate(sql, values: todo.toParameters())
+                lastId = Int(db.lastInsertRowId)
+                print("🟢 データ追加成功 (id = \(lastId ?? 0))")
+            } catch {
+                print("❌ INSERT失敗: \(error.localizedDescription)")
             }
-        } else {
-            print("クエリ実行失敗: \(db.lastErrorMessage())")
+        }
+        return lastId
+    }
+    
+    // MARK: - Todo一覧取得（SELECT）
+    func fetchAll() -> [Todo] {
+        var todos: [Todo] = []
+        
+        let sql = "SELECT * FROM todos ORDER BY created_at DESC"
+        
+        queue.inDatabase { db in
+            do {
+                let rs = try db.executeQuery(sql, values: nil)
+                while rs.next() {
+                    if let todo = Todo(resultSet: rs) {
+                        todos.append(todo)
+                    }
+                }
+                rs.close()
+                print("データ取得 \(todos.count) 件")
+            } catch {
+                print("SELECT失敗: \(error.localizedDescription)")
+            }
         }
         
-        db.close()
-        return (question, answer, commentary)
+        return todos
+    }
+    
+    // MARK: - Todo更新（UPDATE）
+    func update(todo: Todo) -> Bool {
+        guard let id = todo.id else { return false }
+        let sql = "UPDATE todos SET title = ?, message = ?, category = ?, is_done = ? WHERE id = ?"
+        var sucsess = false
+        queue.inDatabase { db in
+            do {
+                try db.executeUpdate(sql, values: [todo.title, todo.message ?? NSNull(), todo.category, todo.isDone ? 1 : 0, id])
+                sucsess = true
+                print("🟡 更新成功 (id = \(id))")
+            } catch {
+                print("❌ UPDATE失敗: \(error.localizedDescription)")
+            }
+        }
+        return sucsess
+    }
+    }
+    
+    // MARK: - Todo削除（DELETE）
+    func delete(id: Int) -> Bool {
+        let sql = "DELETE FROM todos WHERE id = ?"
+        var success = false
+        
+        queue.inDatabase { db in
+            do {
+                try db.executeUpdate(sql, values: [id])
+                success = true
+                print("削除成功 (id = \(id))")
+            } catch {
+                print("DELETE失敗: \(error.localizedDescription)")
+            }
+        }
+        
+        return success
     }
 }
